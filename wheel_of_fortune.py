@@ -46,4 +46,60 @@ class Wheel:
         self.current_section_index = (self.current_section_index + spin_power) % self.total_subsections
         return self.current_section_index
 
+    def spin_result(self, index):
+        return self.full_wheel[index]
 
+
+
+class Player:
+    number_of_players = 0
+
+    def __init__(self, name):
+        self.name = name
+        self.score = 0
+
+    def bankrupt(self):
+        self.score = 0
+
+    def can_buy_a_vowel(self):
+        return self.score > 250
+
+    def increase_score(self, value):
+        self.score += value
+
+    def get_number_of_players(self):
+        move_forward = False
+        while not move_forward:
+            number_of_players = input('Hi! Please enter the number of players: 1, 2 or 3: ')
+            if number_of_players.isnumeric():
+                num = int(number_of_players) 
+                if num > 0 and num < 4:
+                    move_forward = True
+                    Player.number_of_players = num
+                    print(f'All right, there will be {num} number of players')
+                else:
+                    print('Your number is bigger than 3! Please enter 1,2 or 3') 
+            else:
+                print('You didn\'t enter a number! Please enter a number 1, 2 or 3')
+
+    def get_player_name(self):
+        self.name = input('Please enter your name: ')
+
+     
+
+
+
+
+
+    # @staticmethod
+    # def validate_number_of_players(number):
+        
+    #     assert type(number) == int,  'you entered not a number! please enter a number 1, 2 or 3' 
+    #     assert , 'plase enter a number 1, 2 or 3'
+    
+
+
+
+class WordPresenter:
+    def __init__(self):
+        pass

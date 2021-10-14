@@ -1,4 +1,4 @@
-from wheel_of_fortune import Wheel
+from .wheel_of_fortune import Wheel
 import random
 
 wheel = Wheel()
